@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="description" content="Pure HTML/CSS/JS game of Cacheta, a popular brazilian card game." />
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+<script src="main.js"></script>
+<title>Cacheta!</title>
+<div id="playing-table">
+    <div id="center">
+        <div id="remainder">
+            <img id="wildcard"/>
+            <img class="stock"/>
+        </div>
+        <div id="discarding"></div>
+    </div>
+    <div id="player">
+        <span id="announce"></span>
+        <span id="alert"></span>
+        <span id="your-label">Você!</span>
+        <div id="player-hand"></div>
+    </div>
+    <div id="options">
+        <span id="options-text">Opções (reinicie para aplicar):</span>
+        <p> <span id="difficulty-label"><span id="difficulty-text">Dificuldade da CPU</span> <small id=difficulty-explanation>(1 = mais fácil, 10 = mais difícil, 0 = totalmente sem noção)</small></span>
+        <select id="cpu-difficulty">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option selected>10</option>
+        </select>
+        <p> <span id="wildcard-style-text">Coringa:</span>
+        <select id="wildcard-select">
+            <option id="wildcard-suit" value="suit" selected>Mesmo naipe</option>
+            <option id="wildcard-color" value="color">Mesma cor</option>
+            <option id="wildcard-separate" value="separate">Coringa separado</option>
+        </select><br>
+        <button id="reset" onclick="resetGame()">Reiniciar</button>
+    </div>
+    <div id="buttons">
+        <button id="hit" onclick="hit()">Bater!</button>
+    </div>
+    <div id="cpu1">
+        <div id="cpu1-hand"></div>
+    </div>
+    <div id="cpu2">
+        <div id="cpu2-hand"></div>
+    </div>
+    <div id="cpu3">
+        <div id="cpu3-hand"></div>
+    </div>
+    <div id="bottom-text"><span id="made-text">Feito por Gabriel Prada</span><br><span id="images-text">Imagens</span> © <a href="https://www.kenney.nl">Kenney.nl</a>
+    </div>
+</div>
