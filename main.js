@@ -84,7 +84,6 @@ function resetTable(id, endTurn = false) {
     if (id === gameId) {
         let stock = document.querySelector(".stock");
         stock.src = "cards/back.png";
-        stock.alt = "back of card";
         stock.title = "";
         stock.removeAttribute("id");
         stock.onclick = undefined;
@@ -159,7 +158,6 @@ class Player {
 
             let cardInfo = getCard(this.hand[i]);
             img.src =`cards/${cardInfo}.png`;
-            img.alt = cardInfo.toPrettyString();
             img.title = cardInfo.toPrettyString();
 
             document.getElementById(`${this.name}-hand`).appendChild(img);
@@ -176,7 +174,6 @@ class Player {
             let cardElement = document.getElementById(`${this.name}-card-${card}`);
             let cardInfo = getCard(this.hand[card]);
             cardElement.src = `cards/${cardInfo}.png`;
-            cardElement.alt = cardInfo.toPrettyString();
             cardElement.title = cardInfo.toPrettyString();
         }
     }
@@ -267,7 +264,6 @@ class Player {
                 let stock = document.querySelector(".stock");
                 let stockInfo = getCard(card);
                 stock.src = `cards/${stockInfo}.png`;
-                stock.alt = stockInfo.toPrettyString();
                 stock.title = stockInfo.toPrettyString();
                 stock.id = `player-card-9`;
             }
@@ -326,7 +322,6 @@ class Player {
             let discardInfo = getCard(discard);
 
             newTop.src = `cards/${discardInfo}.png`;
-            newTop.alt = discardInfo.toPrettyString();
             newTop.title = discardInfo.toPrettyString();
 
             let leftPosition = Math.random() - 0.69;
@@ -843,7 +838,6 @@ function setupGame(starting = 0) {
         let wildCardInfo = getCard(wildcard);
         wildCardElement.style.display = "initial";
         wildCardElement.src = `cards/${wildCardInfo}.png`;
-        wildCardElement.alt = wildCardInfo.toPrettyString();
         wildCardElement.title = wildCardInfo.toPrettyString();
     }
 
