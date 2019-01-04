@@ -623,7 +623,7 @@ function checkGames(playerHand, excludeWildcard = -1) {
 
         let firstCard = getCard(hand[i]);
 
-        if (firstCard.rankValue < 3) {
+        if (firstCard.rankValue < 2) {
             wrapCards += 1;
         }
 
@@ -713,8 +713,7 @@ function checkGames(playerHand, excludeWildcard = -1) {
                 
                 // broken sequence (with 1 missing card in the middle to form a game)
                 if (secondCard.rankValue - firstCard.rankValue === 2 ||
-                    (secondCard.rankValue === 1 && firstCard.rankValue === 12) ||
-                    (secondCard.rankValue === 2 && firstCard.rankValue === 13)) {
+                    (secondCard.rankValue === 1 && firstCard.rankValue === 12)) {
                         if (!games.some(game => game.includes(hand[i]))) {
                             partialGames.push([ hand[i], hand[jwrap] ]);
                             if (secondCard.rankValue === 1) {
