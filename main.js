@@ -439,10 +439,10 @@ class AI extends Player {
                         let currentGames = checkGames(this.hand);
                         let possibleHand = this.hand.slice();
                         possibleHand.push(discard);
-                        let possibleGames = checkGames(this.hand, discard);
-                        if (possibleGames.games > currentGames.games ||
-                            (possibleGames.games === currentGames.games &&
-                                possibleGames.partialGames > currentGames.partialGames)) {
+                        let possibleGames = checkGames(possibleHand, discard);
+                        if (possibleGames.games.length > currentGames.games.length ||
+                            (possibleGames.games.length === currentGames.games.length &&
+                                possibleGames.partialGames.length > currentGames.partialGames.length)) {
                                 shouldBuyFromDiscarded = 100;
                         }            
                     }
